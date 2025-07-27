@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Health First Camp",
+    "image": "/images/camp1.jpg",
+    "fees": 15,
+    "dateTime": "2025-08-15T09:00:00",
+    "location": "Community Hall, Springfield",
+    "healthcareProfessional": "Dr. Alice Johnson",
+    "participantCount": 120
+  },
+  {
+    "id": 2,
+    "name": "Wellness Checkup Camp",
+    "image": "/images/camp2.jpg",
+    "fees": 20,
+    "dateTime": "2025-08-20T10:30:00",
+    "location": "City Clinic, Shelbyville",
+    "healthcareProfessional": "Dr. Mark Lee",
+    "participantCount": 85
+  },
+  {
+    "id": 3,
+    "name": "Family Health Camp",
+    "image": "/images/camp3.jpg",
+    "fees": 10,
+    "dateTime": "2025-09-05T08:00:00",
+    "location": "Town Square, Ogdenville",
+    "healthcareProfessional": "Dr. Emily Davis",
+    "participantCount": 200
+  },
+  {
+    "id": 4,
+    "name": "Senior Care Camp",
+    "image": "/images/camp4.jpg",
+    "fees": 25,
+    "dateTime": "2025-09-12T11:00:00",
+    "location": "Senior Center, North Haverbrook",
+    "healthcareProfessional": "Dr. Robert Brown",
+    "participantCount": 65
+  },
+  {
+    "id": 5,
+    "name": "Child Wellness Camp",
+    "image": "/images/camp5.jpg",
+    "fees": 5,
+    "dateTime": "2025-09-20T09:30:00",
+    "location": "Primary School Gym, Springfield",
+    "healthcareProfessional": "Dr. Sarah Wilson",
+    "participantCount": 140
+  },
+  {
+    "id": 6,
+    "name": "Community Immunization Camp",
+    "image": "/images/camp6.jpg",
+    "fees": 0,
+    "dateTime": "2025-10-01T10:00:00",
+    "location": "Health Dept. Center, Shelbyville",
+    "healthcareProfessional": "Dr. Michael Clark",
+    "participantCount": 180
+  },
+  {
+    "id": 7,
+    "name": "Dental Care Camp",
+    "image": "/images/camp7.jpg",
+    "fees": 12,
+    "dateTime": "2025-10-15T09:00:00",
+    "location": "Dental Clinic, Ogdenville",
+    "healthcareProfessional": "Dr. Linda Martinez",
+    "participantCount": 90
+  }
+]
