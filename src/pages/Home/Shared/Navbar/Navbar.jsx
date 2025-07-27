@@ -1,9 +1,20 @@
 import React from "react";
 import { Link, NavLink } from "react-router";
 import logo from "../../../../assets/logo.png";
+import useAuth from "../../../../hooks/useAuth";
 
 const Navbar = () => {
-  const user = null; // replace this with Firebase auth later
+  const { user, logoutUser } = useAuth(); // replace this with Firebase auth later
+
+  const handleLogout = () => {
+    logoutUser()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const links = (
     <>
@@ -83,12 +94,12 @@ const Navbar = () => {
                 <NavLink to="/dashboard">Dashboard</NavLink>
               </li>
               <li>
-                <button>Logout</button> {/* Will implement later */}
+                <button onClick={handleLogout}>Logout</button>{" "}
               </li>
             </ul>
           </div>
         ) : (
-          <Link to="/login" className="btn btn-primary text-base text-neutral">
+          <Link to="/login" className="btn btn-primary text-base text-white">
             Join Us
           </Link>
         )}
