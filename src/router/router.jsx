@@ -5,6 +5,7 @@ import AuthLayout from "../layouts/AuthLayout";
 import Login from "../pages/Authentication/Login/Login";
 import Register from "../pages/Authentication/Register/Register";
 import CampDetails from "../pages/Home/PopularCamps/CampsDetail";
+import AvailableCamps from "../pages/AvailableCamps/AvailableCamps";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/camp-details/:campId",
         Component: CampDetails,
+      },
+      {
+        path: "/available-camps",
+        Component: AvailableCamps,
       },
     ],
   },

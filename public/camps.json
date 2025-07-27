@@ -7,7 +7,8 @@
     "dateTime": "2025-08-15T09:00:00",
     "location": "Community Center, Dhaka",
     "healthcareProfessional": "Dr. Ayesha Rahman",
-    "participantCount": 120
+    "participantCount": 120,
+    "description": "A general health screening camp offering basic checkups and consultations."
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
     "dateTime": "2025-08-20T10:30:00",
     "location": "City Hospital, Chittagong",
     "healthcareProfessional": "Dr. Kamrul Hasan",
-    "participantCount": 85
+    "participantCount": 85,
+    "description": "Comprehensive wellness evaluations including blood tests and physician advice."
   },
   {
     "id": 3,
@@ -27,7 +29,8 @@
     "dateTime": "2025-09-05T08:00:00",
     "location": "Town Hall, Sylhet",
     "healthcareProfessional": "Dr. Farida Akhter",
-    "participantCount": 200
+    "participantCount": 200,
+    "description": "Health checkups for all age groups, focusing on family wellbeing and disease prevention."
   },
   {
     "id": 4,
@@ -37,7 +40,8 @@
     "dateTime": "2025-09-12T11:00:00",
     "location": "Senior Citizens Center, Rajshahi",
     "healthcareProfessional": "Dr. Abdul Karim",
-    "participantCount": 65
+    "participantCount": 65,
+    "description": "Specialized services for the elderly including blood pressure, diabetes, and bone health screenings."
   },
   {
     "id": 5,
@@ -47,7 +51,8 @@
     "dateTime": "2025-09-20T09:30:00",
     "location": "Primary School Hall, Khulna",
     "healthcareProfessional": "Dr. Nusrat Jahan",
-    "participantCount": 140
+    "participantCount": 140,
+    "description": "Routine child checkups, growth tracking, and nutritional guidance for young ones."
   },
   {
     "id": 6,
@@ -57,7 +62,8 @@
     "dateTime": "2025-10-01T10:00:00",
     "location": "Upazila Health Complex, Barisal",
     "healthcareProfessional": "Dr. Hasan Mahmud",
-    "participantCount": 180
+    "participantCount": 180,
+    "description": "Free vaccination services for children and adults to enhance community immunity."
   },
   {
     "id": 7,
@@ -67,6 +73,62 @@
     "dateTime": "2025-10-15T09:00:00",
     "location": "Dental Clinic, Rangpur",
     "healthcareProfessional": "Dr. Sharmeen Sultana",
-    "participantCount": 90
+    "participantCount": 90,
+    "description": "Oral health checkups, dental cleaning, and hygiene education for all ages."
+  },
+  {
+    "id": 8,
+    "name": "Vision Screening Camp",
+    "image": "/images/camp8.jpg",
+    "fees": 8,
+    "dateTime": "2025-10-25T09:30:00",
+    "location": "Eye Hospital, Comilla",
+    "healthcareProfessional": "Dr. Tanvir Hossain",
+    "participantCount": 100,
+    "description": "Eye examinations, vision tests, and basic eye care consultations for all."
+  },
+  {
+    "id": 9,
+    "name": "Women's Health Camp",
+    "image": "/images/camp9.jpg",
+    "fees": 18,
+    "dateTime": "2025-11-02T10:00:00",
+    "location": "Women's Care Center, Mymensingh",
+    "healthcareProfessional": "Dr. Rukhsana Begum",
+    "participantCount": 110,
+    "description": "Dedicated to women's health concerns including gynecological checkups and wellness advice."
+  },
+  {
+    "id": 10,
+    "name": "Nutrition Awareness Camp",
+    "image": "/images/camp10.jpg",
+    "fees": 6,
+    "dateTime": "2025-11-10T09:00:00",
+    "location": "Community Hall, Jessore",
+    "healthcareProfessional": "Dr. Mahbuba Sultana",
+    "participantCount": 95,
+    "description": "Focuses on dietary education, BMI analysis, and personalized nutrition plans."
+  },
+  {
+    "id": 11,
+    "name": "Mental Health Support Camp",
+    "image": "/images/camp11.jpg",
+    "fees": 0,
+    "dateTime": "2025-11-18T10:30:00",
+    "location": "Psychology Center, Narayanganj",
+    "healthcareProfessional": "Dr. Jalal Uddin",
+    "participantCount": 70,
+    "description": "Free counseling sessions, mental health checkups, and emotional wellness workshops."
+  },
+  {
+    "id": 12,
+    "name": "Postnatal Care Camp",
+    "image": "/images/camp12.jpg",
+    "fees": 22,
+    "dateTime": "2025-11-25T08:30:00",
+    "location": "Mother & Child Clinic, Gazipur",
+    "healthcareProfessional": "Dr. Laila Ferdous",
+    "participantCount": 60,
+    "description": "Special care and advice for new mothers and infants during the postnatal period."
   }
 ]
