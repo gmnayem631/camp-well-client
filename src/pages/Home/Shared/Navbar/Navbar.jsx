@@ -4,7 +4,7 @@ import logo from "../../../../assets/logo.png";
 import useAuth from "../../../../hooks/useAuth";
 
 const Navbar = () => {
-  const { user, logoutUser } = useAuth(); // replace this with Firebase auth later
+  const { user, logoutUser } = useAuth();
 
   const handleLogout = () => {
     logoutUser()
