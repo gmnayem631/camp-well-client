@@ -2,8 +2,10 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import useAuth from "../../hooks/useAuth";
 
 const AddCamp = () => {
+  const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
 
   const {
@@ -23,6 +25,7 @@ const AddCamp = () => {
       healthcareProfessional: data.healthcareProfessional,
       participantCount: 0,
       description: data.description,
+      organizerEmail: user.email,
     };
 
     try {
