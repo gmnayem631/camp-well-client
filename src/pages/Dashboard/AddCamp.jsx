@@ -15,7 +15,6 @@ const AddCamp = () => {
 
   const onSubmit = async (data) => {
     const newCamp = {
-      id: `CAMP${Date.now().toString().slice(-6)}`,
       name: data.name,
       image: data.image,
       fees: parseFloat(data.fees),

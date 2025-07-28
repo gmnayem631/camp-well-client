@@ -9,6 +9,7 @@ import AvailableCamps from "../pages/AvailableCamps/AvailableCamps";
 import DashboardLayout from "../layouts/DashboardLayout";
 import PrivateRoute from "../routes/PrivateRoute";
 import AddCamp from "../pages/Dashboard/AddCamp";
+import OrganizerProfile from "../pages/Dashboard/OrganizerProfile";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/add-camp",
         Component: AddCamp,
+      },
+      {
+        path: "/dashboard/organizer/profile",
+        Component: OrganizerProfile,
       },
     ],
   },

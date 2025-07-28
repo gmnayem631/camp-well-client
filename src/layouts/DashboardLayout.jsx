@@ -58,7 +58,7 @@ const DashboardLayout = () => {
           <CampWellLogo />
 
           <li>
-            <NavLink to="/dashboard/profile">
+            <NavLink to="/dashboard/organizer/profile">
               <FiUser className="inline mr-2" /> Organizer Profile
             </NavLink>
           </li>
