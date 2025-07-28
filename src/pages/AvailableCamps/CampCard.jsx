@@ -36,7 +36,7 @@ const CampCard = ({ camp }) => {
         </p>
 
         <Link
-          to={`/camp/${camp.id}`}
+          to={`/camp-details/${camp.id}`}
           className={"btn btn-secondary btn-outline hover:text-white mt-4"}
         >
           {camp.fees > 0

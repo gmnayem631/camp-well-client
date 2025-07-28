@@ -28,11 +28,22 @@ const Navbar = () => {
           Available Camps
         </NavLink>
       </li>
+      {user ? (
+        <>
+          <li>
+            <NavLink to={"/dashboard"} className="text-base font-medium">
+              Dashboard
+            </NavLink>
+          </li>
+        </>
+      ) : (
+        ""
+      )}
     </>
   );
 
   return (
-    <div className="navbar bg-base-100 sticky top-0 z-50 shadow-sm px-4">
+    <div className="navbar bg-[#fffaf0] sticky top-0 z-50 shadow-sm px-4">
       <div className="navbar-start">
         {/* Mobile Dropdown */}
         <div className="dropdown">

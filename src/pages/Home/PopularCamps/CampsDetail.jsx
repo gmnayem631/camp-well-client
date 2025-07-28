@@ -80,12 +80,20 @@ const CampDetails = () => {
           {camp.participantCount}
         </p>
         <p className="mb-6">{camp.description}</p>
-        <button
-          className="btn btn-secondary text-white"
-          onClick={() => setModalOpen(true)}
-        >
-          Join Camp
-        </button>
+        <div className="flex justify-between">
+          <button
+            className="btn btn-secondary text-white"
+            onClick={() => setModalOpen(true)}
+          >
+            Join Camp
+          </button>
+          <Link
+            to={"/available-camps"}
+            className="btn btn-secondary text-white"
+          >
+            Back to Available Camps
+          </Link>
+        </div>
       </section>
 
       {/* Modal */}
