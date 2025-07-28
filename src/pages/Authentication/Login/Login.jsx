@@ -2,9 +2,10 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router";
 import SocialLogin from "./SocialLogin";
+import useAuth from "../../../hooks/useAuth";
 
 const Login = () => {
-  // Firebase logic will be added later
+  const { loginUser } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
@@ -16,9 +17,16 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = (data) => {
+    const { email, password } = data;
     console.log(data);
-    // Placeholder login
-    navigate(from, { replace: true });
+    loginUser(email, password)
+      .then((result) => {
+        console.log(result);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (

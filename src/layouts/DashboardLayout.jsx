@@ -1,14 +1,12 @@
 import React from "react";
-import { NavLink, Outlet } from "react-router";
+import { NavLink, Outlet } from "react-router-dom";
 import CampWellLogo from "../pages/Home/Shared/Navbar/CampWellLogo/CampWellLogo";
 import { HiHome } from "react-icons/hi";
 import {
-  FiPackage,
-  FiCreditCard,
-  FiMapPin,
   FiUser,
-  FiCheckCircle,
-  FiClock,
+  FiPlusCircle,
+  FiEdit,
+  FiClipboard,
   FiShield,
 } from "react-icons/fi";
 
@@ -17,8 +15,7 @@ const DashboardLayout = () => {
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
-        {/* Page content here */}
-        {/* Navbar */}
+        {/* Navbar for small screen */}
         <div className="navbar bg-base-300 w-full lg:hidden">
           <div className="flex-none">
             <label
@@ -43,55 +40,56 @@ const DashboardLayout = () => {
           </div>
           <div className="mx-2 flex-1 px-2 lg:hidden">Dashboard</div>
         </div>
-        {/* Page content here */}
-        <Outlet></Outlet>
+
+        {/* Main Page Content */}
+        <Outlet />
       </div>
+
+      {/* Sidebar */}
       <div className="drawer-side">
         <label
           htmlFor="my-drawer-2"
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
+
         <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
-          {/* Sidebar content here */}
-          <CampWellLogo></CampWellLogo>
+          {/* Sidebar content */}
+          <CampWellLogo />
+
           <li>
             <NavLink to="/dashboard">
-              <HiHome className="inline mr-2" /> Home
+              <HiHome className="inline mr-2" /> Organizer Home
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/dashboard/myParcels">
-              <FiPackage className="inline mr-2" /> My Parcels
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/paymentHistory">
-              <FiCreditCard className="inline mr-2" /> Payment History
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/track">
-              <FiMapPin className="inline mr-2" /> Track Package
-            </NavLink>
-          </li>
+
           <li>
             <NavLink to="/dashboard/profile">
-              <FiUser className="inline mr-2" /> Update Profile
+              <FiUser className="inline mr-2" /> Organizer Profile
             </NavLink>
           </li>
+
           <li>
-            <NavLink to="/dashboard/activeRiders">
-              <FiCheckCircle className="inline mr-2" /> Active Riders
+            <NavLink to="/dashboard/add-camp">
+              <FiPlusCircle className="inline mr-2" /> Add A Camp
             </NavLink>
           </li>
+
           <li>
-            <NavLink to="/dashboard/pendingRiders">
-              <FiClock className="inline mr-2" /> Pending Riders
+            <NavLink to="/dashboard/manage-camps">
+              <FiEdit className="inline mr-2" /> Manage Camps
             </NavLink>
           </li>
+
           <li>
-            <NavLink to="/dashboard/makeAdmin">
+            <NavLink to="/dashboard/manage-registered">
+              <FiClipboard className="inline mr-2" /> Registered Camps
+            </NavLink>
+          </li>
+
+          {/* Optional: Admin-only link */}
+          <li>
+            <NavLink to="/dashboard/make-admin">
               <FiShield className="inline mr-2" /> Make Admin
             </NavLink>
           </li>
