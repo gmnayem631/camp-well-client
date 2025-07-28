@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
+import useAxios from "../../../hooks/useAxios";
 
-const PopularCamps = ({ camps }) => {
-  // Sort by participantCount desc, take max 6
+const PopularCamps = () => {
+  const axios = useAxios();
+  const [camps, setCamps] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("/camps")
+      .then((res) => setCamps(res.data))
+      .catch((err) => {
+        console.error("Failed to fetch camps", err);
+      });
+  }, [axios]);
+
   const sortedCamps = camps
     .sort((a, b) => b.participantCount - a.participantCount)
     .slice(0, 6);
@@ -15,7 +27,7 @@ const PopularCamps = ({ camps }) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {sortedCamps.map((camp) => (
           <div
-            key={camp.id}
+            key={camp._id}
             className="card bg-[#f2f3f4] shadow-md rounded-lg overflow-hidden flex flex-col"
           >
             <img
@@ -45,7 +57,7 @@ const PopularCamps = ({ camps }) => {
                 Participants: {camp.participantCount}
               </p>
               <Link
-                to={`/camp-details/${camp.id}`}
+                to={`/camp-details/${camp._id}`}
                 className="btn btn-outline btn-secondary mt-auto"
               >
                 View Details

@@ -10,11 +10,13 @@ import DashboardLayout from "../layouts/DashboardLayout";
 import PrivateRoute from "../routes/PrivateRoute";
 import AddCamp from "../pages/Dashboard/AddCamp";
 import OrganizerProfile from "../pages/Dashboard/OrganizerProfile";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: RootLayout,
+    errorElement: ErrorPage,
     children: [
       {
         index: true,

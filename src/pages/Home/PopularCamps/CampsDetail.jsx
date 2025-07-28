@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router";
 import { useForm } from "react-hook-form";
-import camps from "../../../../public/camps.json";
 import useAuth from "../../../hooks/useAuth";
+import useAxios from "../../../hooks/useAxios";
 
 const CampDetails = () => {
   const { campId } = useParams();
   const { user } = useAuth();
+  const axios = useAxios();
 
-  const camp = camps.find((c) => String(c.id) === campId);
-
+  const [camp, setCamp] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
 
   const {
@@ -19,7 +19,18 @@ const CampDetails = () => {
     formState: { errors },
   } = useForm();
 
-  if (!camp) {
+  // Load camp data from backend
+  useEffect(() => {
+    axios
+      .get(`/camps/${campId}`)
+      .then((res) => setCamp(res.data))
+      .catch((err) => {
+        console.error("Error fetching camp:", err);
+        setCamp(null);
+      });
+  }, [axios, campId]);
+
+  if (camp === null) {
     return (
       <div className="max-w-lg mx-auto p-8 mt-20 bg-accent rounded-lg shadow-lg text-center">
         <h2 className="text-3xl font-bold mb-6 text-error">Camp Not Found</h2>
@@ -27,7 +38,7 @@ const CampDetails = () => {
           Sorry, the camp you are looking for does not exist.
         </p>
         <Link to="/available-camps" className="btn btn-secondary text-white">
-          Back to Camps
+          Back to Available Camps
         </Link>
       </div>
     );
@@ -35,7 +46,7 @@ const CampDetails = () => {
 
   const onSubmit = (data) => {
     const participantData = {
-      campId: camp.id,
+      campId: camp._id,
       campName: camp.name,
       campFees: camp.fees,
       location: camp.location,

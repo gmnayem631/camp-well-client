@@ -3,7 +3,7 @@ import CampCard from "./CampCard";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const AvailableCamps = () => {
-  const axiosSecure = useAxiosSecure(); // ✅ get the axios instance
+  const axiosSecure = useAxiosSecure();
 
   const [camps, setCamps] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -87,7 +87,7 @@ const AvailableCamps = () => {
         }`}
       >
         {filteredCamps.map((camp) => (
-          <CampCard key={camp.id} camp={camp} />
+          <CampCard key={camp._id} camp={camp} />
         ))}
       </div>
     </section>
