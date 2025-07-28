@@ -8,6 +8,7 @@ import CampDetails from "../pages/Home/PopularCamps/CampsDetail";
 import AvailableCamps from "../pages/AvailableCamps/AvailableCamps";
 import DashboardLayout from "../layouts/DashboardLayout";
 import PrivateRoute from "../routes/PrivateRoute";
+import AddCamp from "../pages/Dashboard/AddCamp";
 
 const router = createBrowserRouter([
   {
@@ -49,7 +50,12 @@ const router = createBrowserRouter([
         <DashboardLayout></DashboardLayout>
       </PrivateRoute>
     ),
-    children: [],
+    children: [
+      {
+        path: "/dashboard/add-camp",
+        Component: AddCamp,
+      },
+    ],
   },
 ]);
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router";
 import CampWellLogo from "../pages/Home/Shared/Navbar/CampWellLogo/CampWellLogo";
 import { HiHome } from "react-icons/hi";
 import {
@@ -58,12 +58,6 @@ const DashboardLayout = () => {
           <CampWellLogo />
 
           <li>
-            <NavLink to="/dashboard">
-              <HiHome className="inline mr-2" /> Organizer Home
-            </NavLink>
-          </li>
-
-          <li>
             <NavLink to="/dashboard/profile">
               <FiUser className="inline mr-2" /> Organizer Profile
             </NavLink>
@@ -83,7 +77,8 @@ const DashboardLayout = () => {
 
           <li>
             <NavLink to="/dashboard/manage-registered">
-              <FiClipboard className="inline mr-2" /> Registered Camps
+              <FiClipboard className="inline mr-2" />
+              Manage Registered Camps
             </NavLink>
           </li>
 
