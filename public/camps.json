@@ -1,49 +1,5 @@
 [
   {
-    "id": "CAMP000001",
-    "name": "Health First Camp",
-    "image": "/images/camp1.jpg",
-    "fees": 15,
-    "dateTime": "2025-08-15T09:00:00",
-    "location": "Community Center, Dhaka",
-    "healthcareProfessional": "Dr. Ayesha Rahman",
-    "participantCount": 0,
-    "description": "A general health screening camp offering basic checkups and consultations."
-  },
-  {
-    "id": "CAMP000002",
-    "name": "Wellness Checkup Camp",
-    "image": "/images/camp2.jpg",
-    "fees": 20,
-    "dateTime": "2025-08-20T10:30:00",
-    "location": "City Hospital, Chittagong",
-    "healthcareProfessional": "Dr. Kamrul Hasan",
-    "participantCount": 0,
-    "description": "Comprehensive wellness evaluations including blood tests and physician advice."
-  },
-  {
-    "id": "CAMP000003",
-    "name": "Family Health Camp",
-    "image": "/images/camp3.jpg",
-    "fees": 10,
-    "dateTime": "2025-09-05T08:00:00",
-    "location": "Town Hall, Sylhet",
-    "healthcareProfessional": "Dr. Farida Akhter",
-    "participantCount": 0,
-    "description": "Health checkups for all age groups, focusing on family wellbeing and disease prevention."
-  },
-  {
-    "id": "CAMP000004",
-    "name": "Senior Care Camp",
-    "image": "/images/camp4.jpg",
-    "fees": 25,
-    "dateTime": "2025-09-12T11:00:00",
-    "location": "Senior Citizens Center, Rajshahi",
-    "healthcareProfessional": "Dr. Abdul Karim",
-    "participantCount": 0,
-    "description": "Specialized services for the elderly including blood pressure, diabetes, and bone health screenings."
-  },
-  {
     "id": "CAMP000005",
     "name": "Child Wellness Camp",
     "image": "/images/camp5.jpg",

@@ -7,7 +7,6 @@ const OrganizerProfile = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
 
-  // Local state to hold profile info and form state
   const [profile, setProfile] = useState({
     name: "",
     email: "",
@@ -16,7 +15,6 @@ const OrganizerProfile = () => {
   });
   const [editing, setEditing] = useState(false);
 
-  // Load profile data on mount (fetch from backend)
   useEffect(() => {
     if (user?.email) {
       axiosSecure
@@ -30,12 +28,10 @@ const OrganizerProfile = () => {
     }
   }, [user, axiosSecure]);
 
-  // Handle form input change
   const handleChange = (e) => {
     setProfile((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  // Submit updated profile to backend
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -51,23 +47,30 @@ const OrganizerProfile = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto p-6 bg-white rounded shadow mt-6">
-      <h2 className="text-2xl font-bold mb-4">Organizer </h2>
+    <div className="max-w-2xl mx-auto p-8 bg-base-100 shadow-lg rounded-xl mt-10">
+      <h2 className="text-3xl font-bold mb-6 text-center text-primary">
+        Organizer Profile
+      </h2>
 
       {!editing ? (
-        <>
-          <div className="mb-4">
-            <img
-              src={user.photoURL || "/default-profile.png"}
-              alt="Profile"
-              className="w-32 h-32 rounded-full object-cover mb-2"
-            />
-            <p>
-              <strong>Name:</strong> {user.displayName}
+        <div className="flex flex-col items-center space-y-4">
+          <img
+            src={user.photoURL || profile.image || "/default-profile.png"}
+            alt="Profile"
+            className="w-32 h-32 rounded-full object-cover border-4 border-primary"
+          />
+          <div className="text-center">
+            <p className="text-lg font-semibold">
+              <strong>Name:</strong> {user.displayName || profile.name}
             </p>
-            <p>
+            <p className="text-md text-gray-600">
               <strong>Email:</strong> {user.email}
             </p>
+            {profile.contact && (
+              <p className="text-md text-gray-600">
+                <strong>Contact:</strong> {profile.contact}
+              </p>
+            )}
           </div>
           <button
             className="btn btn-secondary text-white"
@@ -75,9 +78,12 @@ const OrganizerProfile = () => {
           >
             Update Profile
           </button>
-        </>
+        </div>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-5 bg-white p-6 rounded-lg shadow-md"
+        >
           <div>
             <label className="block font-semibold mb-1">Name</label>
             <input
@@ -116,7 +122,7 @@ const OrganizerProfile = () => {
             />
           </div>
 
-          <div className="flex space-x-4">
+          <div className="flex justify-between">
             <button type="submit" className="btn btn-success text-white">
               Save
             </button>

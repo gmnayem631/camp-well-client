@@ -1,11 +1,29 @@
-import React, { useState } from "react";
-import camps from "../../../public/camps.json";
+import React, { useEffect, useState } from "react";
 import CampCard from "./CampCard";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const AvailableCamps = () => {
+  const axiosSecure = useAxiosSecure(); // ✅ get the axios instance
+
+  const [camps, setCamps] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState("");
   const [isGridTwoCol, setIsGridTwoCol] = useState(false);
+
+  useEffect(() => {
+    const fetchCamps = async () => {
+      try {
+        const res = await axiosSecure.get("/camps", {
+          params: { search: searchTerm, sortBy },
+        });
+        setCamps(res.data);
+      } catch (err) {
+        console.error("Failed to load camps:", err);
+      }
+    };
+
+    fetchCamps();
+  }, [searchTerm, sortBy, axiosSecure]);
 
   // Filtered and Sorted Data
   const filteredCamps = camps
