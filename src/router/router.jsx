@@ -12,6 +12,7 @@ import AddCamp from "../pages/Dashboard/AddCamp";
 import OrganizerProfile from "../pages/Dashboard/OrganizerProfile";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import ManageCamps from "../pages/Dashboard/ManageCamps";
+import UpdateCamp from "../pages/Dashboard/UpdateCamp";
 
 const router = createBrowserRouter([
   {
@@ -71,14 +72,14 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      // {
-      //   path: "/update-camp/:campId",
-      //   element: (
-      //     <PrivateRoute>
-      //       <UpdateCamp />
-      //     </PrivateRoute>
-      //   ),
-      // },
+      {
+        path: "/dashboard/update-camp/:campId",
+        element: (
+          <PrivateRoute>
+            <UpdateCamp />
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);

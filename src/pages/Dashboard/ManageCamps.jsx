@@ -86,7 +86,7 @@ const ManageCamps = () => {
                 <td>{camp.healthcareProfessional}</td>
                 <td className="flex flex-wrap gap-2 justify-center py-2">
                   <Link
-                    to={`/update-camp/${camp._id}`}
+                    to={`/dashboard/update-camp/${camp._id}`}
                     className="btn btn-sm btn-outline btn-info hover:text-white"
                   >
                     Update
