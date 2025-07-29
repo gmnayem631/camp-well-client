@@ -13,38 +13,44 @@ import OrganizerProfile from "../pages/Dashboard/OrganizerProfile";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import ManageCamps from "../pages/Dashboard/ManageCamps";
 import UpdateCamp from "../pages/Dashboard/UpdateCamp";
+import OrganizerHome from "../pages/Dashboard/OrganizerHome";
+import ParticipantHome from "../pages/Dashboard/Participant/ParticipantHome";
+import AdminHome from "../pages/Dashboard/MakeAdmin/AdminHome";
+import AdminRoute from "../pages/Dashboard/MakeAdmin/AdminRoute";
+import OrganizerRoute from "../pages/Dashboard/OrganizerRoute";
+import ParticipantRoute from "../pages/Dashboard/Participant/ParticipantRoute";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    Component: RootLayout,
-    errorElement: ErrorPage,
+    element: <RootLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
-        Component: Home,
+        element: <Home />,
       },
       {
-        path: "/camp-details/:campId",
-        Component: CampDetails,
+        path: "camp-details/:campId",
+        element: <CampDetails />,
       },
       {
-        path: "/available-camps",
-        Component: AvailableCamps,
+        path: "available-camps",
+        element: <AvailableCamps />,
       },
     ],
   },
   {
     path: "/",
-    Component: AuthLayout,
+    element: <AuthLayout />,
     children: [
       {
-        path: "/login",
-        Component: Login,
+        path: "login",
+        element: <Login />,
       },
       {
-        path: "/register",
-        Component: Register,
+        path: "register",
+        element: <Register />,
       },
     ],
   },
@@ -52,32 +58,69 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: (
       <PrivateRoute>
-        <DashboardLayout></DashboardLayout>
+        <DashboardLayout />
       </PrivateRoute>
     ),
     children: [
+      // Organizer routes
       {
-        path: "/dashboard/add-camp",
-        Component: AddCamp,
-      },
-      {
-        path: "/dashboard/organizer/profile",
-        Component: OrganizerProfile,
-      },
-      {
-        path: "/dashboard/manage-camps",
+        path: "organizer",
         element: (
-          <PrivateRoute>
-            <ManageCamps />
-          </PrivateRoute>
+          <OrganizerRoute>
+            <OrganizerHome />
+          </OrganizerRoute>
         ),
       },
       {
-        path: "/dashboard/update-camp/:campId",
+        path: "add-camp",
         element: (
-          <PrivateRoute>
+          <OrganizerRoute>
+            <AddCamp />
+          </OrganizerRoute>
+        ),
+      },
+      {
+        path: "organizer/profile",
+        element: (
+          <OrganizerRoute>
+            <OrganizerProfile />
+          </OrganizerRoute>
+        ),
+      },
+      {
+        path: "manage-camps",
+        element: (
+          <OrganizerRoute>
+            <ManageCamps />
+          </OrganizerRoute>
+        ),
+      },
+      {
+        path: "update-camp/:campId",
+        element: (
+          <OrganizerRoute>
             <UpdateCamp />
-          </PrivateRoute>
+          </OrganizerRoute>
+        ),
+      },
+
+      // Participant routes
+      {
+        path: "participant",
+        element: (
+          <ParticipantRoute>
+            <ParticipantHome />
+          </ParticipantRoute>
+        ),
+      },
+
+      // Admin routes
+      {
+        path: "admin",
+        element: (
+          <AdminRoute>
+            <AdminHome />
+          </AdminRoute>
         ),
       },
     ],

@@ -9,8 +9,19 @@ import {
   FiClipboard,
   FiShield,
 } from "react-icons/fi";
+import useUserRole from "../hooks/useUserRole";
 
 const DashboardLayout = () => {
+  const [role, roleLoading] = useUserRole();
+
+  if (roleLoading) {
+    return (
+      <div className="min-h-screen flex justify-center items-center">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    );
+  }
+
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -54,40 +65,77 @@ const DashboardLayout = () => {
         ></label>
 
         <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
-          {/* Sidebar content */}
           <CampWellLogo />
 
+          {/* Common Home Link */}
           <li>
-            <NavLink to="/dashboard/organizer/profile">
-              <FiUser className="inline mr-2" /> Organizer Profile
+            <NavLink to="/">
+              <HiHome className="inline mr-2" /> Home
             </NavLink>
           </li>
 
-          <li>
-            <NavLink to="/dashboard/add-camp">
-              <FiPlusCircle className="inline mr-2" /> Add A Camp
-            </NavLink>
-          </li>
+          {/* Organizer Links */}
+          {role === "organizer" && (
+            <>
+              <li>
+                <NavLink to="/dashboard/organizer">
+                  <FiUser className="inline mr-2" /> Organizer Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/organizer/profile">
+                  <FiUser className="inline mr-2" /> Organizer Profile
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/add-camp">
+                  <FiPlusCircle className="inline mr-2" /> Add Camp
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/manage-camps">
+                  <FiEdit className="inline mr-2" /> Manage Camps
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/manage-registered">
+                  <FiClipboard className="inline mr-2" /> Manage Registered
+                </NavLink>
+              </li>
+            </>
+          )}
 
-          <li>
-            <NavLink to="/dashboard/manage-camps">
-              <FiEdit className="inline mr-2" /> Manage Camps
-            </NavLink>
-          </li>
+          {/* Participant Links */}
+          {role === "participant" && (
+            <>
+              <li>
+                <NavLink to="/dashboard/participant">
+                  <FiUser className="inline mr-2" /> My Profile
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/my-registered-camps">
+                  <FiClipboard className="inline mr-2" /> My Registered Camps
+                </NavLink>
+              </li>
+            </>
+          )}
 
-          <li>
-            <NavLink to="/dashboard/manage-registered">
-              <FiClipboard className="inline mr-2" />
-              Manage Registered Camps
-            </NavLink>
-          </li>
-
-          {/* Optional: Admin-only link */}
-          <li>
-            <NavLink to="/dashboard/make-admin">
-              <FiShield className="inline mr-2" /> Make Admin
-            </NavLink>
-          </li>
+          {/* Admin Links */}
+          {role === "admin" && (
+            <>
+              <li>
+                <NavLink to="/dashboard/admin">
+                  <FiUser className="inline mr-2" /> Admin Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/make-admin">
+                  <FiShield className="inline mr-2" /> Make Admin
+                </NavLink>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </div>

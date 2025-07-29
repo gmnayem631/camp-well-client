@@ -10,10 +10,20 @@ const SocialLogin = () => {
 
   const handleGoogleLogin = () => {
     googleLogin()
-      .then((result) => {
+      .then(async (result) => {
         const user = result.user;
         console.log("Google user:", user);
-        // You can later update user info in the DB here
+
+        // const userInfo = {
+        //   name: user.displayName,
+        //   email: user.email,
+        //   photoURL: user.photoURL,
+        //   role: "participant",
+        // };
+
+        // const res = await axios.post("/users", userInfo);
+        // console.log("updates user", res.data);
+
         navigate(from, { replace: true });
       })
       .catch((error) => {
