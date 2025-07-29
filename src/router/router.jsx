@@ -21,6 +21,7 @@ import OrganizerRoute from "../pages/Dashboard/OrganizerRoute";
 import ParticipantRoute from "../pages/Dashboard/Participant/ParticipantRoute";
 import Payment from "../pages/Dashboard/Payment/Payment";
 import MyRegisteredCamps from "../pages/Dashboard/Participant/MyRegisteredCamps";
+import ManageRegistered from "../pages/Dashboard/ManageRegistered";
 
 const router = createBrowserRouter([
   {
@@ -98,6 +99,14 @@ const router = createBrowserRouter([
         element: (
           <OrganizerRoute>
             <ManageCamps />
+          </OrganizerRoute>
+        ),
+      },
+      {
+        path: "manage-registered",
+        element: (
+          <OrganizerRoute>
+            <ManageRegistered />
           </OrganizerRoute>
         ),
       },
