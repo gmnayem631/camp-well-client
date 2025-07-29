@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../hooks/useAuth";
 import useAxios from "../../../hooks/useAxios";
+import Swal from "sweetalert2";
 
 const CampDetails = () => {
   const { campId } = useParams();
@@ -46,7 +47,6 @@ const CampDetails = () => {
 
   const onSubmit = (data) => {
     const participantData = {
-      campId: camp._id,
       campName: camp.name,
       campFees: camp.fees,
       location: camp.location,
@@ -59,8 +59,28 @@ const CampDetails = () => {
       emergencyContact: data.emergencyContact,
     };
 
-    console.log("Participant Registration Data:", participantData);
-    setModalOpen(false);
+    axios
+      .post("/participants", participantData)
+      .then((res) => {
+        console.log("Participant added:", res.data);
+        Swal.fire({
+          title: "Successfully Registered!",
+          text: `You have joined ${camp.name}.`,
+          icon: "success",
+          confirmButtonText: "OK",
+        });
+        setModalOpen(false);
+        reset();
+      })
+      .catch((err) => {
+        console.error("Failed to register participant:", err);
+        Swal.fire({
+          title: "Registration Failed",
+          text: "Something went wrong. Please try again later.",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+      });
     reset();
   };
 

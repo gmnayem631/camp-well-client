@@ -19,6 +19,8 @@ import AdminHome from "../pages/Dashboard/MakeAdmin/AdminHome";
 import AdminRoute from "../pages/Dashboard/MakeAdmin/AdminRoute";
 import OrganizerRoute from "../pages/Dashboard/OrganizerRoute";
 import ParticipantRoute from "../pages/Dashboard/Participant/ParticipantRoute";
+import Payment from "../pages/Dashboard/Payment/Payment";
+import MyRegisteredCamps from "../pages/Dashboard/Participant/MyRegisteredCamps";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +64,10 @@ const router = createBrowserRouter([
       </PrivateRoute>
     ),
     children: [
+      {
+        path: "payment/:id",
+        Component: Payment,
+      },
       // Organizer routes
       {
         path: "organizer",
@@ -110,6 +116,14 @@ const router = createBrowserRouter([
         element: (
           <ParticipantRoute>
             <ParticipantHome />
+          </ParticipantRoute>
+        ),
+      },
+      {
+        path: "my-registered-camps",
+        element: (
+          <ParticipantRoute>
+            <MyRegisteredCamps />
           </ParticipantRoute>
         ),
       },

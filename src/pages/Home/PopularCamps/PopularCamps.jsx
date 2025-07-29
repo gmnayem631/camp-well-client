@@ -58,7 +58,7 @@ const PopularCamps = () => {
               </p>
               <Link
                 to={`/camp-details/${camp._id}`}
-                className="btn btn-outline btn-secondary mt-auto"
+                className="btn btn-outline btn-secondary mt-auto hover:text-white"
               >
                 View Details
               </Link>
