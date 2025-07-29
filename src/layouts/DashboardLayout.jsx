@@ -8,6 +8,8 @@ import {
   FiEdit,
   FiClipboard,
   FiShield,
+  FiBarChart2,
+  FiCreditCard,
 } from "react-icons/fi";
 import useUserRole from "../hooks/useUserRole";
 
@@ -116,6 +118,16 @@ const DashboardLayout = () => {
               <li>
                 <NavLink to="/dashboard/my-registered-camps">
                   <FiClipboard className="inline mr-2" /> My Registered Camps
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/analytics">
+                  <FiBarChart2 className="inline mr-2" /> Analytics
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/payment-history">
+                  <FiCreditCard className="inline mr-2" /> Payment History
                 </NavLink>
               </li>
             </>

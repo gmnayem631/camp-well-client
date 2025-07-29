@@ -128,6 +128,7 @@ const router = createBrowserRouter([
           </ParticipantRoute>
         ),
       },
+
       {
         path: "my-registered-camps",
         element: (

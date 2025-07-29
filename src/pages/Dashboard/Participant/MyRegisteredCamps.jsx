@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
-import { FaInfoCircle, FaCreditCard } from "react-icons/fa";
+import { FaCreditCard } from "react-icons/fa";
 import useAuth from "../../../hooks/useAuth";
 import useAxios from "../../../hooks/useAxios";
 
@@ -51,6 +51,7 @@ const MyRegisteredCamps = () => {
         <thead>
           <tr>
             <th>Camp Name</th>
+            <th>Camp Fee</th>
             <th>Participant Name</th>
             <th>Participant Email</th>
             <th className="text-center">Actions</th>
@@ -60,16 +61,10 @@ const MyRegisteredCamps = () => {
           {registrations.map((reg) => (
             <tr key={reg._id}>
               <td>{reg.campName}</td>
+              <td>${reg.campFees}</td>
               <td>{reg.participantName}</td>
               <td>{reg.participantEmail}</td>
               <td className="flex justify-center space-x-4">
-                {/* <Link
-                  to={`/camp-details/${reg._id}`}
-                  title="Camp Details"
-                  className="text-blue-600 hover:text-blue-800"
-                >
-                  <FaInfoCircle size={22} />
-                </Link> */}
                 <button
                   title="Pay"
                   className="text-green-600 hover:text-green-800"
