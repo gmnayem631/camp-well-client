@@ -47,6 +47,7 @@ const CampDetails = () => {
 
   const onSubmit = (data) => {
     const participantData = {
+      campId: campId,
       campName: camp.name,
       campFees: camp.fees,
       location: camp.location,

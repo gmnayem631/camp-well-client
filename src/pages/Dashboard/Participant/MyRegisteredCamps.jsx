@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
-import { FaCreditCard } from "react-icons/fa";
+import { FaCreditCard, FaTrash } from "react-icons/fa";
 import useAuth from "../../../hooks/useAuth";
-import useAxios from "../../../hooks/useAxios";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const MyRegisteredCamps = () => {
   const { user } = useAuth();
-  const axios = useAxios();
+  const axios = useAxiosSecure();
   const navigate = useNavigate();
 
   const [registrations, setRegistrations] = useState([]);
   const [loading, setLoading] = useState(true);
+  console.log(registrations);
 
   useEffect(() => {
     if (!user?.email) return;
@@ -28,7 +30,9 @@ const MyRegisteredCamps = () => {
 
   if (loading) {
     return (
-      <div className="text-center mt-10">Loading your registered camps...</div>
+      <div className="flex justify-center items-center min-h-screen">
+        <span className="loading loading-infinity w-20 h-20"></span>
+      </div>
     );
   }
 
@@ -42,6 +46,35 @@ const MyRegisteredCamps = () => {
 
   const handlePay = (id) => {
     navigate(`/dashboard/payment/${id}`);
+  };
+
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "This will remove your registration permanently.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios
+          .delete(`/participants/${id}`)
+          .then(() => {
+            setRegistrations((prev) => prev.filter((item) => item._id !== id));
+            Swal.fire(
+              "Deleted!",
+              "Your registration has been deleted.",
+              "success"
+            );
+          })
+          .catch((err) => {
+            console.error("Failed to delete registration:", err);
+            Swal.fire("Error", "Something went wrong while deleting.", "error");
+          });
+      }
+    });
   };
 
   return (
@@ -67,10 +100,17 @@ const MyRegisteredCamps = () => {
               <td className="flex justify-center space-x-4">
                 <button
                   title="Pay"
-                  className="text-green-600 hover:text-green-800"
-                  onClick={() => handlePay(reg._id)}
+                  className="text-success hover:cursor-pointer"
+                  onClick={() => handlePay(reg.campId)}
                 >
                   <FaCreditCard size={22} />
+                </button>
+                <button
+                  title="Delete"
+                  className="text-error hover:cursor-pointer"
+                  onClick={() => handleDelete(reg._id)}
+                >
+                  <FaTrash size={20} />
                 </button>
               </td>
             </tr>
