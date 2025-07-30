@@ -6,7 +6,7 @@ const useAxiosSecure = () => {
   const { user } = useAuth();
 
   const axiosSecure = axios.create({
-    baseURL: `http://camp-well-server.vercel.app`,
+    baseURL: `https://camp-well-server.vercel.app`,
   });
   axiosSecure.interceptors.request.use(
     (config) => {
