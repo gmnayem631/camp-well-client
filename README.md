@@ -1,12 +1,55 @@
-# React + Vite
+# CampWell
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+*Connecting Medical Camps & Participants*
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Overview
 
-## Expanding the ESLint configuration
+CampWell is a web application designed to bridge the gap between medical camp organizers and participants. Organizers can create and manage medical camps through a dedicated dashboard, while participants can explore available camps, apply, and securely pay fees to join. The platform ensures smooth coordination and transparent communication through role-based dashboards and real-time notifications.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Features
+
+- **Role-based Dashboards:** Separate interfaces for organizers and participants tailored to their specific needs.  
+- **Camp Management:** Organizers can add, update, or delete camps and manage participant applications.  
+- **Application Handling:** Organizers can accept or decline participant applications.  
+- **Secure Payments:** Integrated Stripe payment gateway for participants to pay camp fees seamlessly.  
+- **Real-time Notifications:** Toast and SweetAlert notifications for all CRUD operations enhancing user experience.  
+- **Authentication:** Firebase authentication ensures secure login and user management.  
+
+---
+
+## Live Demo
+
+Explore the live application here: [CampWell](https://camp-well.web.app/)
+
+---
+
+## Technologies Used
+
+- React  
+- Tailwind CSS  
+- React Router  
+- MongoDB  
+- Express.js  
+- Firebase Authentication  
+- Axios  
+- Stripe Payment Gateway  
+
+---
+
+## Social Links
+
+- [LinkedIn](https://www.linkedin.com/in/gulam-mustafa-nayem)  
+- [GitHub](https://github.com/gmnayem631)  
+
+---
+
+## Contact
+
+For any questions or collaboration opportunities, feel free to reach out via LinkedIn or GitHub.
+
+---
+
