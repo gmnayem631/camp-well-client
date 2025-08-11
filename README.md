@@ -1,6 +1,5 @@
 # CampWell
 
-*(Replace with actual screenshot URL if available)*
 
 ## Project Overview  
 CampWell is a web application designed to connect medical camp organizers and participants. Organizers can create and manage camps through a dedicated dashboard, while participants can browse available camps, apply, and securely pay fees. The platform features role-based dashboards and real-time notifications for seamless coordination.
@@ -33,7 +32,7 @@ CampWell is a web application designed to connect medical camp organizers and pa
 ## Running Locally  
 1. Clone the repository:  
    ```bash
-   git clone <your-repository-url>
+   git clone https://github.com/gmnayem631/camp-well-client.git
 
 2. Navigate to the project directory:
    ```bash
