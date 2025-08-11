@@ -1,55 +1,61 @@
 # CampWell
 
-*Connecting Medical Camps & Participants*
+*(Replace with actual screenshot URL if available)*
 
----
+## Project Overview  
+CampWell is a web application designed to connect medical camp organizers and participants. Organizers can create and manage camps through a dedicated dashboard, while participants can browse available camps, apply, and securely pay fees. The platform features role-based dashboards and real-time notifications for seamless coordination.
 
-## Project Overview
-
-CampWell is a web application designed to bridge the gap between medical camp organizers and participants. Organizers can create and manage medical camps through a dedicated dashboard, while participants can explore available camps, apply, and securely pay fees to join. The platform ensures smooth coordination and transparent communication through role-based dashboards and real-time notifications.
-
----
-
-## Features
-
-- **Role-based Dashboards:** Separate interfaces for organizers and participants tailored to their specific needs.  
-- **Camp Management:** Organizers can add, update, or delete camps and manage participant applications.  
-- **Application Handling:** Organizers can accept or decline participant applications.  
-- **Secure Payments:** Integrated Stripe payment gateway for participants to pay camp fees seamlessly.  
-- **Real-time Notifications:** Toast and SweetAlert notifications for all CRUD operations enhancing user experience.  
-- **Authentication:** Firebase authentication ensures secure login and user management.  
-
----
-
-## Live Demo
-
-Explore the live application here: [CampWell](https://camp-well.web.app/)
-
----
-
-## Technologies Used
-
+## Technologies Used  
 - React  
 - Tailwind CSS  
 - React Router  
 - MongoDB  
 - Express.js  
 - Firebase Authentication  
-- Axios  
-- Stripe Payment Gateway  
+- Stripe Payment Gateway
 
----
+## Core Features  
+- Role-based dashboards for organizers and participants  
+- Camp creation, editing, and deletion  
+- Participant application management (accept/decline)  
+- Secure payments using Stripe  
+- Real-time toast and alert notifications  
+- User authentication via Firebase
 
-## Social Links
+## Dependencies  
+- axios  
+- react-router-dom  
+- firebase  
+- stripe-js  
+- react-toastify  
+- sweetalert2
 
-- [LinkedIn](https://www.linkedin.com/in/gulam-mustafa-nayem)  
-- [GitHub](https://github.com/gmnayem631)  
+## Running Locally  
+1. Clone the repository:  
+   ```bash
+   git clone <your-repository-url>
 
----
+2. Navigate to the project directory:
+   ```bash
+   cd campwell
+3. Install dependencies:
+   ```bash
+   npm install
+4. Set up environment variables for Firebase and Stripe credentials.
+5. Start the development server:
+   ```bash
+   npm start
+6. Open http://localhost:3000 in your browser.
 
-## Contact
 
-For any questions or collaboration opportunities, feel free to reach out via LinkedIn or GitHub.
+### Live Demo
+https://camp-well.web.app/
 
----
+### Resources
+- Firebase for user authentication
+- Stripe for payment processing
+- Tailwind CSS for styling
+
+
+
 
