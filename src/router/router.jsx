@@ -15,8 +15,6 @@ import ManageCamps from "../pages/Dashboard/ManageCamps";
 import UpdateCamp from "../pages/Dashboard/UpdateCamp";
 import OrganizerHome from "../pages/Dashboard/OrganizerHome";
 import ParticipantHome from "../pages/Dashboard/Participant/ParticipantHome";
-import AdminHome from "../pages/Dashboard/MakeAdmin/AdminHome";
-import AdminRoute from "../pages/Dashboard/MakeAdmin/AdminRoute";
 import OrganizerRoute from "../pages/Dashboard/OrganizerRoute";
 import ParticipantRoute from "../pages/Dashboard/Participant/ParticipantRoute";
 import Payment from "../pages/Dashboard/Payment/Payment";
@@ -24,6 +22,7 @@ import MyRegisteredCamps from "../pages/Dashboard/Participant/MyRegisteredCamps"
 import ManageRegistered from "../pages/Dashboard/ManageRegistered";
 import AboutUs from "../pages/AboutUs/AboutUs";
 import Community from "../pages/Community/Community";
+import Analytics from "../pages/Dashboard/Participant/Analytics";
 
 const router = createBrowserRouter([
   {
@@ -147,14 +146,12 @@ const router = createBrowserRouter([
           </ParticipantRoute>
         ),
       },
-
-      // Admin routes
       {
-        path: "admin",
+        path: "analytics",
         element: (
-          <AdminRoute>
-            <AdminHome />
-          </AdminRoute>
+          <ParticipantRoute>
+            <Analytics />
+          </ParticipantRoute>
         ),
       },
     ],
