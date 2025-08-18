@@ -5,6 +5,7 @@ import HowItWorks from "../../Components/HowItWorks";
 import Categories from "../../Components/Categories";
 import Testimonials from "../../Components/Testimonials";
 import UpcomingCamps from "../../Components/UpcomingCamps";
+import CommunityMarquee from "../../Components/CommunityMarquee";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Categories></Categories>
       <Testimonials></Testimonials>
       <UpcomingCamps></UpcomingCamps>
+      <CommunityMarquee></CommunityMarquee>
     </div>
   );
 };
