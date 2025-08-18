@@ -1,6 +1,7 @@
 import React from "react";
 import CampWellLogo from "../Navbar/CampWellLogo/CampWellLogo";
 import { FaFacebookF, FaLinkedin, FaGithub } from "react-icons/fa";
+import BackToTop from "../../../../Components/BackToTop";
 
 const Footer = () => {
   return (
@@ -56,6 +57,7 @@ const Footer = () => {
             >
               About Us
             </a>
+            <BackToTop></BackToTop>
           </div>
         </div>
       </nav>
