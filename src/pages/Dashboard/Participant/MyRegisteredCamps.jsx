@@ -4,6 +4,7 @@ import { FaCreditCard, FaTrash } from "react-icons/fa";
 import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import Loading from "../../../Components/Loading";
 
 const MyRegisteredCamps = () => {
   const { user } = useAuth();
@@ -12,7 +13,6 @@ const MyRegisteredCamps = () => {
 
   const [registrations, setRegistrations] = useState([]);
   const [loading, setLoading] = useState(true);
-  console.log(registrations);
 
   useEffect(() => {
     if (!user?.email) return;
@@ -29,11 +29,7 @@ const MyRegisteredCamps = () => {
   }, [axios, user]);
 
   if (loading) {
-    return (
-      <div className="flex justify-center items-center min-h-screen">
-        <span className="loading loading-infinity w-20 h-20"></span>
-      </div>
-    );
+    return <Loading></Loading>;
   }
 
   if (registrations.length === 0) {

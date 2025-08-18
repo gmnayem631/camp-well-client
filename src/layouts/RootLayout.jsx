@@ -6,8 +6,8 @@ import Footer from "../pages/Home/Shared/Footer/Footer";
 const RootLayout = () => {
   return (
     <div>
-      <header className="shadow-sm bg-base-100 ">
-        <Navbar className="max-w-7xl"></Navbar>
+      <header className="shadow-sm bg-[#fffaf0]">
+        <Navbar className=""></Navbar>
       </header>
       <main className="my-10">
         <Outlet></Outlet>

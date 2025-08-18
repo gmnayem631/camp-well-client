@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import CampCard from "./CampCard";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
+import useAxios from "../../hooks/useAxios";
 
 const AvailableCamps = () => {
-  const axiosSecure = useAxiosSecure();
+  const axiosSecure = useAxios();
 
   const [camps, setCamps] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -44,7 +44,7 @@ const AvailableCamps = () => {
     });
 
   return (
-    <section className="max-w-6xl mx-auto px-4 py-10">
+    <section className="max-w-7xl mx-auto px-4 py-10">
       <h2 className="text-3xl md:text-4xl font-bold text-center text-secondary mb-10">
         Available Medical Camps
       </h2>

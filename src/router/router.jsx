@@ -22,6 +22,7 @@ import ParticipantRoute from "../pages/Dashboard/Participant/ParticipantRoute";
 import Payment from "../pages/Dashboard/Payment/Payment";
 import MyRegisteredCamps from "../pages/Dashboard/Participant/MyRegisteredCamps";
 import ManageRegistered from "../pages/Dashboard/ManageRegistered";
+import AboutUs from "../pages/AboutUs/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "available-camps",
         element: <AvailableCamps />,
+      },
+      {
+        path: "about-us",
+        element: <AboutUs />,
       },
     ],
   },

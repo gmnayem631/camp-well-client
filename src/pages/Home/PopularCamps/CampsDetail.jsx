@@ -77,7 +77,7 @@ const CampDetails = () => {
         console.error("Failed to register participant:", err);
         Swal.fire({
           title: "Registration Failed",
-          text: "Something went wrong. Please try again later.",
+          text: "You must login first or something went wrong. Please try again later.",
           icon: "error",
           confirmButtonText: "OK",
         });

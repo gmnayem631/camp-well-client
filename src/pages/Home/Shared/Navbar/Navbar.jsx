@@ -27,6 +27,11 @@ const Navbar = () => {
         <NavLink to="/available-camps" className="text-base font-medium">
           Available Camps
         </NavLink>
+      </li>{" "}
+      <li>
+        <NavLink to="/about-us" className="text-base font-medium">
+          About Us
+        </NavLink>
       </li>
       {user ? (
         <>
@@ -43,7 +48,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-[#fffaf0] sticky top-0 z-50 shadow-sm px-4">
+    <div className="navbar max-w-7xl mx-auto top-0 z-50 px-4">
       <div className="navbar-start">
         {/* Mobile Dropdown */}
         <div className="dropdown">

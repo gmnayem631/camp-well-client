@@ -5,7 +5,7 @@
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
-  --color-primary: #fd8087; /* Coral Rose */
+  --color-primary: #fd8087; /* Coral Rose  */
   --color-secondary: #007d8a; /* Teal Blue */
   --color-accent: #fff4f5; /* Soft Pink Accent */
   --color-neutral: #3d4451;
