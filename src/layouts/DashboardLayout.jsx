@@ -125,11 +125,11 @@ const DashboardLayout = () => {
                   <FiBarChart2 className="inline mr-2" /> Analytics
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink to="/dashboard/payment-history">
                   <FiCreditCard className="inline mr-2" /> Payment History
                 </NavLink>
-              </li>
+              </li> */}
             </>
           )}
 
