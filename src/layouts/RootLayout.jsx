@@ -6,7 +6,7 @@ import Footer from "../pages/Home/Shared/Footer/Footer";
 const RootLayout = () => {
   return (
     <div>
-      <header className="shadow-sm bg-[#fffaf0]">
+      <header className="bg-[#fffaf0]">
         <Navbar className=""></Navbar>
       </header>
       <main className="my-10">

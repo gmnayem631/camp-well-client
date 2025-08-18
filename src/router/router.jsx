@@ -23,6 +23,7 @@ import ManageRegistered from "../pages/Dashboard/ManageRegistered";
 import AboutUs from "../pages/AboutUs/AboutUs";
 import Community from "../pages/Community/Community";
 import Analytics from "../pages/Dashboard/Participant/Analytics";
+import Contact from "../pages/Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: "community",
         element: <Community />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
       },
     ],
   },
