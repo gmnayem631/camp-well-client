@@ -23,6 +23,7 @@ import Payment from "../pages/Dashboard/Payment/Payment";
 import MyRegisteredCamps from "../pages/Dashboard/Participant/MyRegisteredCamps";
 import ManageRegistered from "../pages/Dashboard/ManageRegistered";
 import AboutUs from "../pages/AboutUs/AboutUs";
+import Community from "../pages/Community/Community";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "about-us",
         element: <AboutUs />,
+      },
+      {
+        path: "community",
+        element: <Community />,
       },
     ],
   },
